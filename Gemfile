@@ -23,6 +23,10 @@ end
 
 gem 'jquery-rails'
 
+gem 'haml'
+gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
+                              :git => 'git://github.com/anjlab/bootstrap-rails.git'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 

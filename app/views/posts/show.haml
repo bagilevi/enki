@@ -1,0 +1,52 @@
+- content_for :page_title do
+  = post_title @post
+
+= render @post
+
+.comments
+  - @post.approved_comments.each do |comment|
+    %div.comment{ id: "comment-#{comment.id}" }
+      = render comment
+
+%p.text-info.related
+  %small
+    Looking for more? Head on over to the
+    = link_to 'archives', archives_path
+    = "."
+
+
+- unless @comment.errors.empty?
+  .errors
+    %p.text-error
+      Comment not added!
+    %ul
+      - @comment.errors.sort_by(&:first).each do |error|
+        %li= format_comment_error(error)
+
+%div
+  = form_for [@post, @comment], html: { class: 'form-horizontal' } do |form|
+    %legend Post a comment
+    .control-group
+      .control-label
+        = form.label :author
+      .controls
+        = form.text_field 'author'
+        %br
+        %small
+          Name or
+          = link_to 'OpenID', 'http://openidexplained.com/'
+          (required)
+    .control-group
+      .control-label
+        = form.label :body, "Comment"
+      .controls
+        = form.text_area 'body'
+        %br
+        %small
+          (
+          = link_to 'lesstile enabled', 'http://lesstile.rubyforge.org'
+          \- surround code blocks with ---)
+    .control-group
+      .controls
+        = form.submit 'Add Comment', class: 'btn'
+

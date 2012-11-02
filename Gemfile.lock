@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/anjlab/bootstrap-rails.git
+  revision: 7ed5d347034a7b265ff7cad416dac731e511ffac
+  specs:
+    anjlab-bootstrap-rails (2.2.1.0)
+      railties (>= 3.0)
+      sass (>= 3.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -78,6 +86,7 @@ GEM
       json (>= 1.4.6)
     gherkin (2.7.3-java)
       json (>= 1.4.6)
+    haml (3.1.7)
     hike (1.2.1)
     i18n (0.6.0)
     jdbc-sqlite3 (3.7.2)
@@ -151,7 +160,7 @@ GEM
       rspec (~> 2.8.0)
     ruby-openid (2.1.8)
     rubyzip (0.9.5)
-    sass (3.1.12)
+    sass (3.2.1)
     sass-rails (3.2.3)
       railties (~> 3.2.0.beta)
       sass (>= 3.1.10)
@@ -194,6 +203,7 @@ DEPENDENCIES
   RedCloth (~> 4.2.9)
   aaronh-chronic
   activerecord-jdbcsqlite3-adapter
+  anjlab-bootstrap-rails!
   coderay
   cucumber-rails
   cucumber-websteps
@@ -201,6 +211,7 @@ DEPENDENCIES
   exception_notification (~> 2.5.2)
   factory_girl
   formtastic
+  haml
   jquery-rails
   jruby-openssl
   lesstile

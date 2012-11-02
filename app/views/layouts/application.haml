@@ -1,0 +1,54 @@
+!!!
+%html
+  %head
+    %meta{ charset: "utf-8" }
+    %title= html_title yield(:page_title)
+    = stylesheet_link_tag    "application"
+    = javascript_include_tag "application"
+    = open_id_delegation_link_tags(enki_config[:open_id_delegation, :server], enki_config[:open_id_delegation, :delegate]) if enki_config[:open_id_delegation]
+    = csrf_meta_tags
+  %body
+    .navbar.navbar-static-top
+      .navbar-inner
+        .container
+          %a.brand{ href: root_url }
+            = enki_config[:title]
+
+
+    .container
+      .row
+        .span9
+          #main
+            = yield
+
+        .span3.sidebar
+          #navigation
+            %h2 Pages
+            %ul.nav.nav-list
+              - page_links_for_navigation.each do |link|
+                %li
+                  = link_to(link.name, link.url)
+            - unless category_links_for_navigation.empty?
+              %h2 Categories
+              %ul.nav.nav-list
+                - category_links_for_navigation.each do |link|
+                  %li
+                    = link_to(link.name, link.url)
+
+            %form#sform{ method: 'get', action: "http://www.google.com/search" }
+              %div
+                %h2
+                  %label{ for: 'q' }
+                    Search
+
+                %input#q{ type: 'text', value: '' }
+                %input{ type: 'hidden', name: 'sitesearch', value: enki_config[:url] }
+
+      .row
+        .span12
+          #footer
+            = enki_config[:title]
+            &#169;
+            = enki_config[:author, :name]
+
+
