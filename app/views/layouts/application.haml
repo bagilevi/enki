@@ -17,32 +17,17 @@
 
     .container
       .row
-        .span9
-          #main
-            = yield
+        - if enki_config[:sidebar]
+          .span9
+            #main
+              = yield
 
-        .span3.sidebar
-          #navigation
-            %h2 Pages
-            %ul.nav.nav-list
-              - page_links_for_navigation.each do |link|
-                %li
-                  = link_to(link.name, link.url)
-            - unless category_links_for_navigation.empty?
-              %h2 Categories
-              %ul.nav.nav-list
-                - category_links_for_navigation.each do |link|
-                  %li
-                    = link_to(link.name, link.url)
-
-            %form#sform{ method: 'get', action: "http://www.google.com/search" }
-              %div
-                %h2
-                  %label{ for: 'q' }
-                    Search
-
-                %input#q{ type: 'text', value: '' }
-                %input{ type: 'hidden', name: 'sitesearch', value: enki_config[:url] }
+          .span3.sidebar
+            = render 'layouts/sidebar'
+        - else
+          .span12
+            #main
+              = yield
 
       .row
         .span12

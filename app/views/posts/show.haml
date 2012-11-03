@@ -8,11 +8,12 @@
     %div.comment{ id: "comment-#{comment.id}" }
       = render comment
 
-%p.text-info.related
-  %small
-    Looking for more? Head on over to the
-    = link_to 'archives', archives_path
-    = "."
+- if enki_config[:archives]
+  %p.text-info.related
+    %small
+      Looking for more? Head on over to the
+      = link_to 'archives', archives_path
+      = "."
 
 
 - unless @comment.errors.empty?

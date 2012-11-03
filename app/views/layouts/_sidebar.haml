@@ -1,0 +1,22 @@
+#navigation
+  %h2 Pages
+  %ul.nav.nav-list
+    - page_links_for_navigation.each do |link|
+      %li
+        = link_to(link.name, link.url)
+  - unless category_links_for_navigation.empty?
+    %h2 Categories
+    %ul.nav.nav-list
+      - category_links_for_navigation.each do |link|
+        %li
+          = link_to(link.name, link.url)
+
+  - if enki_config[:search]
+    %form#sform{ method: 'get', action: "http://www.google.com/search" }
+      %div
+        %h2
+          %label{ for: 'q' }
+            Search
+
+        %input#q{ type: 'text', value: '' }
+        %input{ type: 'hidden', name: 'sitesearch', value: enki_config[:url] }
