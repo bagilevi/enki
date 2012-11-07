@@ -9,6 +9,9 @@ gem 'rails', '3.2.8'
 # in production environments by default.
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
+  gem 'coffee-rails'
+  gem 'uglifier'
+  gem 'therubyracer'
 end
 
 platforms :ruby do
