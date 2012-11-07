@@ -64,6 +64,14 @@ module Enki
     # Enable the asset pipeline
     config.assets.enabled = true
 
+    config.assets.initialize_on_precompile = false
+    config.assets.precompile += %w(
+      twitter/bootstrap.css
+      twitter/bootstrap-responsive.css
+    )
+
+    config.assets.paths << Rails.root.join("lib", "assets")
+
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
   end
