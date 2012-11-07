@@ -12,7 +12,12 @@ group :assets do
 end
 
 platforms :ruby do
-  gem 'sqlite3'
+  group :development do
+    gem 'sqlite3'
+  end
+  group :production do
+    gem 'pg'
+  end
 end
 
 platforms :jruby do

@@ -116,6 +116,7 @@ GEM
     nokogiri (1.5.0-java)
     open_id_authentication (1.1.0)
       rack-openid (~> 1.3)
+    pg (0.14.0)
     polyglot (0.3.3)
     rack (1.4.1)
     rack-cache (1.2)
@@ -217,6 +218,7 @@ DEPENDENCIES
   lesstile
   nokogiri (~> 1.5.0)
   open_id_authentication
+  pg
   rack-openid
   rails (= 3.2.8)
   rspec
