@@ -1,5 +1,10 @@
 # Configuration options for your blog - customise to taste
 # This file contains no secret information, so can be stored in source control (unlike database.yml)
+#
+# Alternatively, you can set these variables via environment variables, which
+# will override these. Variable names should be all uppercase, joined with underscore
+# and prefixed with ENKI_. E.g. ENKI_TITLE, ENKI_AUTHOR_NAME.
+#
 title: My Enki Blog
 url:   http://enkiblog.com
 author:
@@ -8,7 +13,7 @@ author:
   open_id:                  # These are used to login to the admin area
       - http://enkiblog.com
       - http://secondaryopenid.com
-  google_plus_url: https://plus.google.com/111111111111111111111
+  #google_plus_url: https://plus.google.com/111111111111111111111
 
 sidebar: false
 search: false
