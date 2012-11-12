@@ -4,6 +4,14 @@ A Ruby on Rails blogging app for the fashionable developer.
 
 Preferences are for the masses. Any real coder knows the easiest and best way to customize something is by *hacking code*. Because you want your blog to be you, not bog standard install #4958 with 20 posts per page instead of 15. For this you need a *clean, simple, easy to understand code base* that stays out of your way. No liquid drops and templates hindering your path, no ugly PHP(Hypertext Preprocessor) stylings burning your eyeballs.
 
+h2. Features in this fork
+
+* using "Twitter Bootstrap":http://twitter.github.com/bootstrap/index.html for public appearence
+* started conversion to HAML & SASS
+* configurable via ENV vars (ENKI_TITLE, ENKI_AUTHOR_NAME, etc.)
+* deployable to "Heroku":http://www.heroku.com/
+* link to Google Plus profile to allow "author information in search results":http://support.google.com/webmasters/bin/answer.py?hl=en&answer=1408986
+
 h2. Quick Start
 
 <pre><code>  git clone git://github.com/xaviershay/enki.git enki
