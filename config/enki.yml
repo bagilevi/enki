@@ -8,6 +8,7 @@ author:
   open_id:                  # These are used to login to the admin area
       - http://enkiblog.com
       - http://secondaryopenid.com
+  google_plus_url: https://plus.google.com/111111111111111111111
 
 sidebar: false
 search: false

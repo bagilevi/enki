@@ -35,6 +35,9 @@
           #footer
             = enki_config[:title]
             &#169;
-            = enki_config[:author, :name]
+            - if enki_config[:author, :google_plus_url].present?
+              = link_to enki_config[:author, :name], enki_config[:author, :google_plus_url], rel: "author"
+            - else
+              = enki_config[:author, :name]
 
 
